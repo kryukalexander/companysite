@@ -24,6 +24,14 @@
   display: table;
   clear: both;
 }
+/*common*/
+a {
+  text-decoration: none;
+  color: black;
+}
+a:visited {
+  color: black;
+}
 body {
   margin: 0;
   padding: 0;
@@ -76,10 +84,6 @@ header {
 .menu-item:last-of-type {
   padding-right: 0;
 }
-.menu-item a {
-  text-decoration: none;
-  color: black;
-}
 .menu-item a:hover {
   color: #f88600;
 }
@@ -90,7 +94,7 @@ header {
   border-radius: 10px 0;
 }
 .header {
-  font-family: Candara, sans-serif;
+  font-family: "Candara", sans-serif;
   font-size: 36px;
   font-weight: normal;
   text-align: center;
@@ -117,17 +121,29 @@ header {
   -o-transform: translateX(-50%);
   transform: translateX(-50%);
 }
+.slider .product {
+  padding-top: 10px;
+  height: 251px;
+}
+.slider .lower {
+  position: relative;
+  top: 17px;
+}
 .slide {
   display: none;
   position: absolute;
-  min-height: 306px;
+  height: 216px;
   width: 100%;
-  padding: 45px 0 45px 45px;
-  background-image: url("../img/slide-background_blur.jpg");
+  padding: 45px 0;
+  background-image: url("../img/slide_background.jpg");
   background-repeat: no-repeat;
   background-position: center;
   -webkit-background-size: cover;
   background-size: cover;
+}
+.slide .big {
+  font-size: 72px;
+  color: #f88600;
 }
 .slide:first-of-type {
   display: block;
@@ -151,6 +167,9 @@ header {
   margin-bottom: 0;
   font-weight: normal;
 }
+.slide-text {
+  height: 216px;
+}
 .slide-product-photo {
   float: right;
 }
@@ -164,42 +183,27 @@ header {
   margin-top: 10px;
   float: left;
 }
-.slide-product-text span {
-  font-size: 72px;
-  color: #f88600;
+.slide-product-text .right {
+  float: right;
 }
 .slide-product-text-right {
-  font-family: Candara, sans-serif;
+  font-family: "Candara", sans-serif;
   font-size: 48px;
   width: 52%;
   margin-top: 10px;
-  float: right;
 }
 .slide-product-text-right span {
   font-size: 72px;
   color: #f88600;
 }
-.slide-text {
-  height: 216px;
-}
 .slide-one {
-  background-image: url("../img/slide-background.jpg");
-  padding-top: 10px;
-  padding-left: 0;
+  background-image: url("../img/slide_product_1.jpg");
 }
 .slide-two {
-  background-image: url("../img/slide2-product-background.png");
-  padding-top: 10px;
-  padding-left: 0;
+  background-image: url("../img/slide_product_2.jpg");
 }
 .slide-three {
-  background-image: url("../img/slide3-product-background.jpg");
-  padding-top: 10px;
-  padding-left: 0;
-}
-.lower {
-  position: relative;
-  top: 20px;
+  background-image: url("../img/slide_product_3.jpg");
 }
 .download {
   border: 2px solid #f88600;
@@ -208,7 +212,6 @@ header {
   border-radius: 10px 0;
   color: #f88600;
   font-family: "FranklinGothicBook", sans-serif;
-  text-decoration: none;
   font-size: 24px;
   font-weight: normal;
   text-align: center;
@@ -217,7 +220,14 @@ header {
   margin-top: 20px;
   display: block;
   float: right;
+  transition-duration: 0.2s;
 }
+.download:hover {
+  background-color: #f88600;
+  color: #fbfff0;
+  transition-duration: 0.2s;
+}
+/*radio buttons*/
 input[type="radio"] {
   display: none;
 }
@@ -234,6 +244,7 @@ label {
   border-radius: 50%;
   margin: 0 6px;
 }
+/*portfolio*/
 .portfolio {
   display: flex;
   flex-direction: row;
@@ -259,8 +270,6 @@ label {
   -moz-border-radius: 10px 0;
   border-radius: 10px 0;
   background-color: #acdf00;
-  text-decoration: none;
-  color: #000;
   font-size: 18px;
   text-align: center;
   display: block;
@@ -304,9 +313,14 @@ footer {
 .social-buttons {
   margin-bottom: 76px;
 }
-.social > img {
+.social img {
   width: 35px;
   margin-right: 10px;
+  transition-duration: 0.2s;
+}
+.social img:hover {
+  transform: scale(1.25);
+  transition-duration: 0.2s;
 }
 .block-right {
   width: 306px;
@@ -326,8 +340,6 @@ footer {
   -moz-border-radius: 10px 0;
   border-radius: 10px 0;
   position: absolute;
-  text-decoration: none;
-  color: #000;
   top: -20px;
   right: 0;
 }
@@ -339,6 +351,4 @@ footer {
   display: block;
   text-align: right;
   margin-top: 23px;
-  color: #000;
-  text-decoration: none;
 }
