@@ -24,7 +24,6 @@
 
 @primary: #acdf00;
 @secondary: #f88600;
-@secondary-dark: #de851b;
 @white: #fbfff0;
 @width: 960px;
 @font1: "FranklinGothicBook";
@@ -48,6 +47,16 @@
     content: '';
     display: table;
     clear: both;
+}
+
+/*common*/
+
+a {
+    text-decoration: none;
+    color: black;
+    &:visited {
+        color: black;
+    }
 }
 
 body {
@@ -110,12 +119,8 @@ header {
     &:last-of-type {
         padding-right: 0;
     }
-    & a {
-        text-decoration: none;
-        color: black;
-        &:hover {
-            color: @secondary;
-        }
+    & a:hover {
+        color: @secondary;
     }
 }
 
@@ -124,7 +129,7 @@ header {
 }
 
 .header {
-    font-family: Candara, sans-serif;
+    font-family: @font2, sans-serif;
     font-size: 36px;
     font-weight: normal;
     text-align: center;
@@ -141,7 +146,6 @@ header {
     box-sizing: border-box;
     height: 306px;
     overflow: hidden;
-    //background-color: #335d00;
 
     &-control {
         position: absolute;
@@ -155,19 +159,34 @@ header {
         -o-transform: translateX(-50%);
         transform: translateX(-50%);
     }
+
+    .product {
+        padding-top: 10px;
+        height: 251px;
+    }
+
+    .lower {
+        position: relative;
+        top: 17px;
+    }
 }
 
 .slide {
     display: none;
     position: absolute;
-    min-height: 306px;
+    height: 216px;
     width: 100%;
-    padding: 45px 0 45px 45px;
-    background-image: url("../img/slide-background_blur.jpg");
+    padding: 45px 0;
+    background-image: url("../img/slide_background.jpg");
     background-repeat: no-repeat;
     background-position: center;
     -webkit-background-size: cover;
     background-size: cover;
+
+    .big {
+        font-size: 72px;
+        color: @secondary;
+    }
 
     &:first-of-type {
 
@@ -183,6 +202,8 @@ header {
         .border (@secondary, 5px, 50%);
         display: block;
         float: left;
+
+
     }
 
     &-head {
@@ -191,6 +212,10 @@ header {
         margin-top: 0;
         margin-bottom: 0;
         font-weight: normal;
+    }
+
+    &-text {
+        height: 216px;
     }
 
     &-product-photo {
@@ -207,62 +232,42 @@ header {
         width: 57%;
         margin-top: 10px;
         float: left;
-        & span {
-            font-size: 72px;
-            color: @secondary;
 
+        .right {
+            float: right;
         }
 
     }
 
     &-product-text-right {
-        font-family: Candara, sans-serif;
+        font-family: @font2, sans-serif;
         font-size: 48px;
         width: 52%;
         margin-top: 10px;
-        float: right;
         & span {
             font-size: 72px;
             color: @secondary;
-
         }
     }
 
-    &-text {
-        height: 216px;
-    }
-
     &-one {
-        background-image: url("../img/slide-background.jpg");
-        padding-top: 10px;
-        padding-left: 0;
+        background-image: url("../img/slide_product_1.jpg");
     }
 
     &-two {
-        background-image: url("../img/slide2-product-background.png");
-        padding-top: 10px;
-        padding-left: 0;
-
+        background-image: url("../img/slide_product_2.jpg");
     }
 
     &-three {
-        background-image: url("../img/slide3-product-background.jpg");
-        padding-top: 10px;
-        padding-left: 0;
-
+        background-image: url("../img/slide_product_3.jpg");
     }
 }
 
-.lower {
-    position: relative;
-    top: 20px;
-}
 
 .download {
     .border(@secondary, 2px, 10px 0);
     color: @secondary;
     font-family: @font1, sans-serif;
-    text-decoration: none;
     font-size: 24px;
     font-weight: normal;
     text-align: center;
@@ -271,9 +276,17 @@ header {
     margin-top: 20px;
     display: block;
     float: right;
+    transition-duration: 0.2s;
+
+    &:hover {
+        background-color: @secondary;
+        color: @white;
+        transition-duration: 0.2s;
+    }
 
 }
 
+/*radio buttons*/
 input[type="radio"] {
     display: none;
     &:checked + label {
@@ -289,6 +302,7 @@ label {
     margin: 0 6px;
 }
 
+/*portfolio*/
 .portfolio {
 
     display: flex;
@@ -311,8 +325,6 @@ label {
 .order {
     .border(@secondary, 2px, 10px 0);
     background-color: @primary;
-    text-decoration: none;
-    color: #000;
     font-size: 18px;
     text-align: center;
     display: block;
@@ -336,7 +348,6 @@ label {
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         box-sizing: border-box;
-
     }
 }
 
@@ -363,9 +374,16 @@ footer {
 }
 
 .social {
-    & > img {
+
+    img {
         width: 35px;
         margin-right: 10px;
+        transition-duration: 0.2s;
+
+        &:hover {
+            transform: scale(1.25);
+            transition-duration: 0.2s;
+        }
     }
 }
 
@@ -386,8 +404,6 @@ footer {
     padding: 12px 1px;
     .border(@secondary, 2px, 10px 0);
     position: absolute;
-    text-decoration: none;
-    color: #000;
     top: -20px;
     right: 0;
 }
@@ -401,7 +417,5 @@ footer {
     display: block;
     text-align: right;
     margin-top: 23px;
-    color: #000;
-    text-decoration: none;
 }
 
