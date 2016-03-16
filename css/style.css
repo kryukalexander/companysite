@@ -65,7 +65,7 @@ header {
 }
 .logo {
   width: 190px;
-  font-family: Candara, sans-serif;
+  font-family: "Candara", sans-serif;
   font-size: 48px;
   line-height: 48px;
   float: left;
@@ -123,16 +123,17 @@ header {
 }
 .slider .product {
   padding-top: 10px;
-  height: 251px;
+  height: 306px;
 }
 .slider .lower {
   position: relative;
   top: 17px;
 }
 .slide {
+  box-sizing: border-box;
   display: none;
   position: absolute;
-  height: 216px;
+  height: 306px;
   width: 100%;
   padding: 45px 0;
   background-image: url("../img/slide_background.jpg");
@@ -289,13 +290,14 @@ label {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+/*footer*/
 footer {
   background-color: #acdf00;
   padding: 36px 0;
 }
 .block-left {
   display: block;
-  width: 306px;
+  width: 305px;
   margin-right: 22px;
   float: left;
 }
@@ -315,7 +317,7 @@ footer {
   transition-duration: 0.2s;
 }
 .block-center {
-  width: 306px;
+  width: 305px;
   float: left;
   position: relative;
 }
@@ -326,7 +328,7 @@ footer {
   margin-right: 2px;
 }
 .block-right {
-  width: 306px;
+  width: 305px;
   float: right;
   position: relative;
 }
