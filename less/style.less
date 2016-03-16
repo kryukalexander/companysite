@@ -183,21 +183,13 @@ header {
     -webkit-background-size: cover;
     background-size: cover;
 
-    .big {
-        font-size: 72px;
-        color: @secondary;
-    }
-
-    &:first-of-type {
-
-        display: block;
+    .el-1, .el-2, .el-3 {
+      display: none;
     }
 
     &-photo {
         height: 206px;
         width: 206px;
-        margin-right: 45px;
-        margin-bottom: 45px;
         .border (@secondary, 5px, 50%);
         display: block;
         float: left;
@@ -212,7 +204,8 @@ header {
     }
 
     &-text {
-        height: 216px;
+        //height: 216px;
+        padding-left: 261px;
     }
 
     &-product-photo {
@@ -221,30 +214,28 @@ header {
 
     &-product-photo-left {
         float: left;
+        //margin-right: 20px;
     }
 
     &-product-text {
-        font-family: Candara, sans-serif;
+        font-family: @font2, sans-serif;
         font-size: 48px;
         width: 57%;
         margin-top: 10px;
         float: left;
 
-        .right {
+        &-right {
+            font-family: @font2, sans-serif;
+            font-size: 48px;
+            width: 53%;
+            margin-top: 10px;
             float: right;
         }
-
     }
 
-    &-product-text-right {
-        font-family: @font2, sans-serif;
-        font-size: 48px;
-        width: 52%;
-        margin-top: 10px;
-        & span {
-            font-size: 72px;
-            color: @secondary;
-        }
+    .big {
+        font-size: 72px;
+        color: @secondary;
     }
 
     &-one {
