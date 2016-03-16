@@ -70,7 +70,7 @@ controls.click(function() {
             Toggle(CurrentSlide, CurrentSlide + 1);
             CurrentSlide += 1;
         }
-        $("controls").eq(CurrentSlide).prop("checked", true);
+        controls.eq(CurrentSlide).prop("checked", true);
     }, 20000)
 
 });
