@@ -29,9 +29,6 @@ a {
   text-decoration: none;
   color: black;
 }
-a:visited {
-  color: black;
-}
 body {
   margin: 0;
   padding: 0;
