@@ -28,11 +28,14 @@
 
 @width: 960px;
 @width-tablet: 768px;
-@width-mobile: 480px;
+@width-mobile: 100%;
 
 @column: 305px;
+@column_tablet: 353px;
 
 @slider_height: 306px;
+@slider_height_tablet: 376px;
+@slider_height_mobile: 625px;
 
 @font1: "FranklinGothicBook";
 @font2: "Candara";
@@ -47,8 +50,19 @@
 /*Layout*/
 
 .layout-center {
+    box-sizing: border-box;
     width: @width;
     margin: 0 auto;
+    position: relative;
+    @media screen and (max-width: 960px) {
+        width: @width-tablet;
+        padding: 0 20px;
+    }
+
+    @media screen and (max-width: 767px) {
+        width: @width-mobile;
+        padding: 0 10px;
+    }
 }
 
 .clearfix:after {
@@ -62,8 +76,7 @@
 a {
     text-decoration: none;
     color: black;
-    }
-
+}
 
 body {
     margin: 0;
@@ -72,6 +85,9 @@ body {
     min-height: 100vh;
     font-family: @font1, sans-serif;
     font-size: 14px;
+    @media screen and (max-width: 767px) {
+        //min-width: 320px;
+    }
 }
 
 /*header*/
@@ -99,7 +115,6 @@ header {
 /*main*/
 
 .navigation {
-    height: 50px;
     margin-top: 64px;
 }
 
@@ -109,6 +124,11 @@ header {
     font-size: 48px;
     line-height: 48px;
     float: left;
+    @media screen and (max-width: 767px) {
+        float: none;
+        margin: 0 auto;
+    }
+
 }
 
 .menu {
@@ -116,15 +136,33 @@ header {
     margin: 0;
     padding: 0;
     float: right;
+    position: relative;
+    right: -20px;
+    @media screen and (max-width: 767px) {
+        float: none;
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        right: 0;
+
+    }
 }
 
 .menu-item {
     float: left;
     font-size: 18px;
     padding: 7px 21px;
-    &:last-of-type {
-        padding-right: 0;
+    @media screen and (max-width: 767px) {
+        float: none;
+        padding: 7px 0;
+        flex-grow: 1;
+        flex-shrink: 0;
+
+        text-align: center;
+        width: 80%;
     }
+
     & a:hover {
         color: @secondary;
     }
@@ -153,6 +191,20 @@ header {
     height: @slider_height;
     overflow: hidden;
 
+    @media screen and (max-width: 960px) {
+        height: @slider_height_tablet;
+    }
+
+    @media screen and (max-width: 767px) {
+        height: @slider_height_mobile;
+    }
+
+    &-team {
+        @media screen and (max-width: 767px) {
+            height: @slider_height_mobile + 100px;
+        }
+    }
+
     &-control {
         position: absolute;
         margin: 0 auto;
@@ -166,9 +218,22 @@ header {
         transform: translateX(-50%);
     }
 
+    .team {
+        @media screen and (max-width: 767px) {
+            height: @slider_height_mobile + 100px;
+        }
+    }
+
     .product {
         padding-top: 10px;
-        height: 306px;
+        height: @slider_height;
+        @media screen and (max-width: 960px) {
+            height: @slider_height_tablet;
+        }
+
+        @media screen and (max-width: 767px) {
+            height: @slider_height_mobile;
+        }
     }
 
     .lower {
@@ -178,6 +243,7 @@ header {
 }
 
 .slide {
+
     box-sizing: border-box;
     display: none;
     position: absolute;
@@ -189,17 +255,33 @@ header {
     background-position: center;
     -webkit-background-size: cover;
     background-size: cover;
+    @media screen and (max-width: 960px) {
+        height: @slider_height_tablet;
+    }
+
+    @media screen and (max-width: 767px) {
+
+        height: @slider_height_mobile;
+    }
 
     .el-1, .el-2, .el-3 {
         display: none;
     }
 
     &-photo {
+        img {
+            width: 100%;
+        }
         height: 206px;
         width: 206px;
+        overflow: hidden;
         .border (@secondary, 5px, 50%);
         display: block;
         float: left;
+        @media screen and (max-width: 767px) {
+            float: none;
+            margin: 0 auto;
+        }
     }
 
     &-head {
@@ -208,18 +290,48 @@ header {
         margin-top: 0;
         margin-bottom: 0;
         font-weight: normal;
+        @media screen and (max-width: 767px) {
+            text-align: center;
+            font-size: 25px;
+        }
+
     }
 
     &-text {
         padding-left: 261px;
+        @media screen and (max-width: 767px) {
+            padding: 0;
+
+        }
     }
 
     &-product-photo {
         float: right;
+
+        img {
+            width: 100%;
+        }
+        @media screen and (max-width: 767px) {
+            float: none;
+            margin: 0 auto;
+            display: block;
+            width: 100%;
+            max-width: 388px;
+        }
     }
 
     &-product-photo-left {
         float: left;
+        img {
+            width: 100%;
+        }
+        @media screen and (max-width: 767px) {
+            float: none;
+            margin: 0 auto;
+            display: block;
+            width: 100%;
+            max-width: 388px;
+        }
     }
 
     &-product-text {
@@ -228,6 +340,18 @@ header {
         width: 57%;
         margin-top: 10px;
         float: left;
+        @media screen and (max-width: 960px) {
+            float: none;
+            padding-right: 55%;
+
+        }
+        @media screen and (max-width: 767px) {
+            float: none;
+            padding: 0;
+            text-align: center;
+            width: 100%;
+
+        }
 
         &-right {
             font-family: @font2, sans-serif;
@@ -235,6 +359,18 @@ header {
             width: 53%;
             margin-top: 10px;
             float: right;
+            @media screen and (max-width: 960px) {
+                float: none;
+                padding-left: 55%;
+            }
+
+            @media screen and (max-width: 767px) {
+                float: none;
+                padding: 0;
+                text-align: center;
+                width: 100%;
+
+            }
         }
     }
 
@@ -270,6 +406,15 @@ header {
     float: right;
     transition-duration: 0.2s;
 
+    @media screen and (max-width: 960px) {
+        float: left;
+    }
+
+    @media screen and (max-width: 960px) {
+        float: none;
+        margin: 15px auto;
+    }
+
     &:hover {
         background-color: @secondary;
         color: @white;
@@ -291,7 +436,7 @@ label {
     width: 13px;
     height: 13px;
     .border(@secondary, 1px, 50%);
-    margin: 0 6px;
+    margin: 3px 6px;
 }
 
 /*portfolio*/
@@ -312,6 +457,9 @@ label {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     margin-bottom: 14px;
+    @media screen and (max-width: 960px) {
+        width: @column_tablet;
+    }
 }
 
 .order {
@@ -323,6 +471,10 @@ label {
     width: 425px;
     margin: 31px auto 73px;
     padding: 10px 0;
+
+    @media screen and (max-width: 767px) {
+        width: 300px;
+    }
 }
 
 /*Преимущества*/
@@ -340,6 +492,11 @@ label {
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         box-sizing: border-box;
+
+        @media screen and (max-width: 767px) {
+            width: 100%;
+            float: none;
+        }
     }
 }
 
@@ -355,18 +512,44 @@ footer {
     margin-right: 22px;
     float: left;
 
+    @media screen and (max-width: 960px) {
+        width: @column_tablet;
+    }
+
+    @media screen and (max-width: 767px) {
+        //width: 200px;
+        float: none;
+        margin-bottom: 10px;
+        margin-right: 0;
+        width: 100%;
+    }
+
     & p {
 
         margin-bottom: 0;
+        @media screen and (max-width: 767px) {
+            text-align: center;
+        }
     }
 }
 
 .social-buttons {
     margin-bottom: 107px;
+    @media screen and (max-width: 960px) {
+        margin-bottom: 0;
+        //text-align: center;
+    }
+
+    @media screen and (max-width: 767px) {
+        margin-bottom: 0;
+        text-align: center;
+    }
+
 }
 
 .social {
-
+    @media screen and (max-width: 767px) {
+    }
     img {
         width: 35px;
         margin-right: 10px;
@@ -383,19 +566,46 @@ footer {
     width: @column;
     float: left;
     position: relative;
+    margin-right: 22px;
+    @media screen and (max-width: 960px) {
+        width: @column_tablet;
+    }
+
+    @media screen and (max-width: 767px) {
+        float: none;
+        text-align: center;
+        width: 100%;
+    }
 
     .counter {
         margin-top: 130px;
         display: block;
         float: left;
         margin-right: 2px;
+        @media screen and (max-width: 960px) {
+            margin-top: 16px;
+        }
+
+        @media screen and (max-width: 767px) {
+            display: inline-block;
+            float: none;
+        }
+
     }
 }
 
 .block-right {
     width: @column;
     float: right;
-    position: relative;
+    @media screen and (max-width: 960px) {
+        width: @column_tablet;
+    }
+
+    @media screen and (max-width: 767px) {
+        float: none;
+        width: 100%;
+
+    }
 }
 
 .footer-logo {
@@ -403,6 +613,9 @@ footer {
     font-family: Candara, sans-serif;
     font-size: 48px;
     line-height: 48px;
+    @media screen and (max-width: 767px) {
+        margin: 0 auto;
+    }
 }
 
 .footer-up {
@@ -411,16 +624,43 @@ footer {
     position: absolute;
     top: -20px;
     right: 0;
+    @media screen and (max-width: 767px) {
+        top: -85px;
+        right: 10px;
+    }
+
+    @media screen and (max-width: 960px) {
+        right: 20px;
+    }
 }
 
 .contacts {
     margin-top: 65px;
     text-align: right;
+    @media screen and (max-width: 960px) {
+        margin-top: 19px;
+        text-align: right;
+
+    }
+
+    @media screen and (max-width: 767px) {
+        text-align: center;
+
+    }
+
 }
 
 .sitemap {
     display: block;
     text-align: right;
     margin-top: 16px;
+    @media screen and (max-width: 960px) {
+        text-align: right;
+
+    }
+    @media screen and (max-width: 767px) {
+        text-align: center;
+
+    }
 }
 
