@@ -225,22 +225,18 @@ header {
   display: none;
 }
 .slide-photo {
-  border: 5px solid #f88600;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
   height: 206px;
   width: 206px;
-  display: block;
-  float: left;
-}
-.slide-photo img {
-  width: 100%;
   overflow: hidden;
   border: 5px solid #f88600;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
+  display: block;
+  float: left;
+}
+.slide-photo img {
+  width: 100%;
 }
 @media screen and (max-width: 767px) {
   .slide-photo {
