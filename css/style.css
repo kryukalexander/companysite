@@ -153,7 +153,7 @@ header {
 }
 @media screen and (max-width: 767px) {
   .slider {
-    height: 575px;
+    height: 625px;
   }
 }
 @media screen and (max-width: 767px) {
@@ -189,7 +189,7 @@ header {
 }
 @media screen and (max-width: 767px) {
   .slider .product {
-    height: 575px;
+    height: 625px;
   }
 }
 .slider .lower {
@@ -221,7 +221,7 @@ header {
 }
 @media screen and (max-width: 767px) {
   .slide {
-    height: 575px;
+    height: 625px;
   }
 }
 .slide .el-1,
@@ -354,7 +354,6 @@ header {
     padding-right: 0;
   }
 }
-
 @media screen and (max-width: 767px) {
   .slide .product-text-right {
     float: none;
