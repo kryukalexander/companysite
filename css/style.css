@@ -354,6 +354,15 @@ header {
     padding-right: 0;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .slide .product-text-right {
+    float: none;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+  }
+}
 .slide .big {
   font-size: 72px;
   color: #f88600;
