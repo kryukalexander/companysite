@@ -58,12 +58,18 @@ header {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   background-color: #acdf00;
-  height: 55px;
+  padding-bottom: 16px;
 }
 .header-motto {
   font-size: 18px;
   padding-top: 19px;
   display: inline-block;
+}
+@media screen and (max-width: 767px) {
+  .header-motto {
+    display: block;
+    text-align: center;
+  }
 }
 .header-contacts {
   font-size: 14px;
@@ -71,16 +77,27 @@ header {
   padding-top: 23px;
   margin-left: 51px;
 }
+@media screen and (max-width: 767px) {
+  .header-contacts {
+    float: none;
+    margin-left: 0;
+    text-align: center;
+  }
+}
 /*main*/
 .navigation {
   margin-top: 64px;
 }
 .logo {
-  width: 190px;
+  width: 267px;
   font-family: "Candara", sans-serif;
   font-size: 48px;
   line-height: 48px;
   float: left;
+}
+.logo img {
+  display: block;
+  width: 100%;
 }
 @media screen and (max-width: 767px) {
   .logo {
@@ -138,6 +155,20 @@ header {
   line-height: 48px;
   margin-top: 30px;
   margin-bottom: 30px;
+}
+h3 {
+  font-family: "Candara";
+  font-size: 24px;
+  font-weight: normal;
+}
+.about-product {
+  margin-bottom: 71px;
+}
+.big-text {
+  font-size: 18px;
+}
+ul {
+  padding-left: 16px;
 }
 /*Slider*/
 .slider {
@@ -444,12 +475,11 @@ label {
   align-content: space-between;
 }
 .item {
-  width: 305px;
-  height: 110px;
-  border: 2px solid #f88600;
-  -webkit-border-radius: 10px 0;
-  -moz-border-radius: 10px 0;
-  border-radius: 10px 0;
+  width: 33%;
+  height: 120px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -459,6 +489,17 @@ label {
   .item {
     width: 353px;
   }
+}
+.item-img-container {
+  width: 134px;
+}
+.item-txt {
+  font-size: 18px;
+  padding-left: 15px;
+  margin: 0;
+  flex-shrink: 1;
+  width: 100px;
+  flex-grow: 1;
 }
 .order {
   border: 2px solid #f88600;
@@ -487,14 +528,13 @@ label {
   float: left;
   margin-right: 22px;
   width: 305px;
-  height: 146px;
-  border: 2px solid #f88600;
-  -webkit-border-radius: 10px 0;
-  -moz-border-radius: 10px 0;
-  border-radius: 10px 0;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+}
+.example-image img {
+  display: block;
+  margin: 0 auto;
 }
 @media screen and (max-width: 767px) {
   .example-image {
@@ -502,6 +542,27 @@ label {
     float: none;
     margin-right: 0;
   }
+}
+.example-header {
+  font-size: 24px;
+  font-weight: normal;
+  margin-bottom: 28px;
+}
+@media screen and (max-width: 767px) {
+  .example-header {
+    text-align: center;
+  }
+}
+.example-text {
+  font-size: 18px;
+}
+.example-selected {
+  font-size: 24px;
+}
+.lead {
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 33px;
 }
 /*footer*/
 footer {
@@ -584,7 +645,7 @@ footer {
 }
 @media screen and (max-width: 960px) {
   .block-center .counter {
-    margin-top: 16px;
+    margin-top: 31px;
   }
 }
 @media screen and (max-width: 767px) {
@@ -609,10 +670,19 @@ footer {
   }
 }
 .footer-logo {
-  width: 190px;
+  width: 267px;
   font-family: Candara, sans-serif;
   font-size: 48px;
   line-height: 48px;
+}
+.footer-logo img {
+  display: block;
+  width: 100%;
+}
+@media screen and (max-width: 960px) {
+  .footer-logo {
+    margin-left: auto;
+  }
 }
 @media screen and (max-width: 767px) {
   .footer-logo {
@@ -626,7 +696,7 @@ footer {
   -moz-border-radius: 10px 0;
   border-radius: 10px 0;
   position: absolute;
-  top: -20px;
+  top: -85px;
   right: 0;
 }
 @media screen and (max-width: 767px) {
@@ -641,8 +711,8 @@ footer {
   }
 }
 .contacts {
-  margin-top: 65px;
-  text-align: right;
+  margin-top: 45px;
+  text-align: left;
 }
 @media screen and (max-width: 960px) {
   .contacts {
